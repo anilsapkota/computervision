@@ -22,7 +22,7 @@ while True:
     outp = net.forward()
 
     r = 1
-    for i in np.argsort(outp[0])[::-1][:5]:
+    for i in np.argsort(outp[0])[::-1][:5]:  #we are trying to get the top 5 best probability of classification of images in each frame of video 
         txt = '"%s" Probability "%.3f" ' %(classes[i],outp[0][i]*100)
         cv2.putText(frame,txt,(0,25 +40*r),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),2)
         r+=1
